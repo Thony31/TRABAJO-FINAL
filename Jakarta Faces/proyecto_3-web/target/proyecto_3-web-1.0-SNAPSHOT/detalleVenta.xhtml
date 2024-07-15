@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="jakarta.faces.core">
+<head>
+    <title>Detalle de Venta</title>
+</head>
+<body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Venta ID:" />
+            <h:inputText value="#{detalleVentaController.ventaId}" />
+
+            <h:outputLabel value="Producto ID:" />
+            <h:inputText value="#{detalleVentaController.productoId}" />
+
+            <h:outputLabel value="Cantidad:" />
+            <h:inputText value="#{detalleVentaController.detalleVenta.cantidad}" />
+
+            <h:commandButton value="Guardar" action="#{detalleVentaController.save}" />
+        </h:panelGrid>
+    </h:form>
+
+    <h:dataTable value="#{detalleVentaController.detalles}" var="detalle">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{detalle.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Producto</f:facet>
+            #{detalle.producto.nombre}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Cantidad</f:facet>
+            #{detalle.cantidad}
+        </h:column>
+    </h:dataTable>
+</body>
+</html>

@@ -1,0 +1,7 @@
+beans\ProductoBean.class
+beans\VentaBean.class
+entidades\Venta.class
+beans\ClienteBean.class
+entidades\Producto.class
+entidades\Cliente.class
+entidades\DetalleVenta.class
